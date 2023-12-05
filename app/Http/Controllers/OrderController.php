@@ -41,6 +41,8 @@ class OrderController extends Controller
     public function show(Order $order)
     {
         //
+        $data = $order->orderItems()->get();
+        return view('orders.show',['order_items'=> $data]);
     }
 
     /**
