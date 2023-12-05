@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\Order;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
@@ -14,6 +15,8 @@ class OrderController extends Controller
     public function index()
     {
         //
+        $data = Auth::user()->orders()->get();
+        return view('orders.index',['orders'=> $data]);
     }
 
     /**
