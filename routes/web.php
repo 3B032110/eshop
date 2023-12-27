@@ -49,13 +49,13 @@ Route::get('/', function () {
 // 	'index','show','store','update','destroy'
 // ]);
 
-Route::get('Products', [ProductController::class, 'index']);
-Route::get('Products/{Product}', [ProductController::class, 'show']);
-Route::get('Products/create', [ProductController::class, 'create']);
-Route::post('Products', [ProductController::class, 'store']);
-Route::get('Products/{Product}/edit', [ProductController::class, 'edit']);
-Route::patch('Products/{Product}', [ProductController::class, 'update']);
-Route::delete('Products/{Product}', [ProductController::class, 'destroy']);
+Route::get('products', [ProductController::class, 'index']);
+Route::get('products/{Product}', [ProductController::class, 'show']);
+Route::get('products/create', [ProductController::class, 'create']);
+Route::post('products', [ProductController::class, 'store']);
+Route::get('products/{Product}/edit', [ProductController::class, 'edit']);
+Route::patch('products/{Product}', [ProductController::class, 'update']);
+Route::delete('products/{Product}', [ProductController::class, 'destroy']);
 
 Route::resource('cart_items', CartItemController::class)->middleware(['auth', 'verified']);
 
